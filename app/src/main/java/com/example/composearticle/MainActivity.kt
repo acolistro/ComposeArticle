@@ -13,6 +13,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.Paragraph
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,7 +31,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ArticleGreetingWithText("Android")
+                    ArticleGreetingWithText(
+                        stringResource(R.string.article_title),
+                        stringResource(R.string.article_paragraph),
+                        stringResource(R.string.article_paragraph_two)
+                    )
                 }
             }
         }
@@ -70,6 +75,6 @@ fun ArticleGreetingWithText(title: String, paragraph: String, paragraphTwo: Stri
 @Composable
 fun DefaultPreview() {
     ComposeArticleTheme {
-        ArticleGreetingWithText("Android")
+        ArticleGreetingWithText("Android", "article text", "article text text")
     }
 }
